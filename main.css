@@ -2,3 +2,19 @@ body {
   /* text-align: center; */
   color: yellowgreen;
 }
+.container {
+  background: wheat;
+}
+form {
+  border-bottom: 2px solid rgb(163, 159, 159);
+}
+.todo {
+  background-color: rgb(222, 223, 223);
+  /* border: 2px solid rgb(163, 159, 159); */
+}
+.items > li {
+  border: 0.5px solid black;
+  margin: 10px;
+  font: 1.5em bold;
+  color: orange;
+}

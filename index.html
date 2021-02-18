@@ -8,12 +8,21 @@
     <link rel="stylesheet" href="main.css" />
   </head>
   <body>
-    <h1>What would you like to do?</h1>
-    <form type="tex" placeholder="Task....">
-      <label for="new-task">Enter a task:</label>
-      <input type="text" id="new-task" name="new-task" />
-      <label for="date-task">Due by:</label>
-      <input type="date" id="date-task" name="date-task" />
-    </form>
+    <div id="containter" class="container">
+      <h1>What would you like to do?</h1>
+      <form type="text" placeholder="Task....">
+        <label for="new-task">Enter a task:</label>
+        <input type="text" id="new-task" name="new-task" />
+        <label for="date-task">Due by:</label>
+        <input type="date" id="date-task" name="date-task" />
+      </form>
+      <div class="todo" id="todo">
+        <ul class="items" id="items">
+          <li>fake item #1</li>
+          <li>fake item #2</li>
+        </ul>
+      </div>
+    </div>
+    <script src="list.js"></script>
   </body>
 </html>
