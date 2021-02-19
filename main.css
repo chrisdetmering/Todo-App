@@ -59,3 +59,11 @@ li {
   background-color: transparent;
   border: none;
 }
+.clearAll {
+  color: darkslateblue;
+  border: none;
+  font-weight: bolder;
+  background-color: transparent;
+  margin-top: 2ex;
+  padding-right: 325px;
+}

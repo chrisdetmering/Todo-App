@@ -7,7 +7,7 @@
     <title>Duane Todo</title>
     <link rel="stylesheet" href="main.css" />
   </head>
-  <body>
+  <body onload="savedTasks()">
     <div class="container1">
       <h1>True Productivity List</h1>
       <h2>Now with adjustable procrastination!</h2>
@@ -19,8 +19,9 @@
       />
       <input class="new-task" type="date" id="myDate" />
       <button class="submit" onclick="newItem()">Add to List</button>
+      <button class="clearAll" onclick="clearAll()">Clear All Tasks</button>
     </div>
-    <ul class="items" id="items"></ul>
+    <ul class="todoList" id="todoList"></ul>
     <script src="list.js"></script>
   </body>
 </html>

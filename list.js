@@ -1,3 +1,13 @@
+
+//Reset App
+function clearAll(){
+    localStorage.clear();
+    window.location.reload();
+}
+// storing
+let itemsArray = localStorage.getItem('items')
+        ? JSON.parse(localStorage.getItem('items'))
+        : []
 // creates element of the to-do item
 function newItem() {
     var li = document.createElement("li");
@@ -19,12 +29,14 @@ function newItem() {
     closeBtn.className = "close";
     closeBtn.appendChild(fire);
     closeBtn.onclick = deleteTask;
-// Creates line item with all the pieces, if not blank 
+// localstorage & Creates line item with all the pieces, if not blank 
     li.append(checkbox,"   ",newItemName," ",dueBy,dueDate,"  ",closeBtn);
     if (inputValue === '') {
       alert("Enter a task");
     } else {
-      document.getElementById("items").appendChild(li);
+        itemsArray.push(li.value)
+        localStorage.setItem('items', JSON.stringify(itemsArray));
+        document.getElementById("todoList").appendChild(li);
     }
 //reset inputs
     document.getElementById("myInput").value = "";
@@ -46,5 +58,11 @@ function uncheckTask(){
     div.className = "";
     this.onclick = checkOffTask;
 }
-
-
+//load previous tasks
+function savedTasks() {
+    for (let i = 0; i < localStorage.length; i++){
+        const key = localStorage.key(i);
+        const value = localStorage.getItem(key);    
+        document.getElementById("todoList").append(`${key} ${value}<br />`);
+    }  
+}
