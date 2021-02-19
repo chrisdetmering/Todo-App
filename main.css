@@ -1,20 +1,50 @@
 body {
-  /* text-align: center; */
-  color: yellowgreen;
+  background: slategray;
+  text-align: center;
 }
-.container {
-  background: wheat;
+h1 {
+  color: white;
+  font-size: 3em;
+  margin-bottom: 0;
 }
-form {
-  border-bottom: 2px solid rgb(163, 159, 159);
+h2 {
+  margin-top: 0;
+  color: navy;
+}
+input {
+  border: none;
+}
+ul {
+  flex: auto;
+  list-style-type: none;
+  background: lightsteelblue;
+}
+.dueDate {
+  font: 0.625em bold;
+  text-align: center;
+  color: black;
+  background-color: transparent;
 }
 .todo {
   background-color: rgb(222, 223, 223);
   /* border: 2px solid rgb(163, 159, 159); */
 }
 .items > li {
-  border: 0.5px solid black;
-  margin: 10px;
-  font: 1.5em bold;
-  color: orange;
+  border: none;
+  margin: 5px;
+  font: 1.75em bold;
+  color: mediumseagreen;
+}
+.dueBy {
+  font: 0.625em bold;
+  color: black;
+}
+.submit {
+  background-color: transparent;
+  border: none;
+  font-weight: 900;
+}
+.close {
+  background-color: transparent;
+  border: none;
 }
