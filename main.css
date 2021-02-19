@@ -1,6 +1,11 @@
 body {
-  background: slategray;
+  width: 500px;
+  display: flex;
+  justify-content: center;
   text-align: center;
+  flex-direction: column;
+  margin: auto;
+  background: slategray;
 }
 .completed {
   text-decoration: line-through;
@@ -26,6 +31,10 @@ ul {
   font: 1.75em bold;
   color: mediumseagreen;
   background: lightsteelblue;
+  text-align: center;
+}
+li {
+  text-align: left;
 }
 .dueDate {
   font: 0.625em bold;
