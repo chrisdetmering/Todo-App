@@ -8,25 +8,19 @@
     <link rel="stylesheet" href="main.css" />
   </head>
   <body>
-    <h1>True Productivity List</h1>
-    <h2> Now with adjustable procrastination!!</h2>
-    <div>
+    <div class="container1">
+      <h1>True Productivity List</h1>
+      <h2>Now with adjustable procrastination!</h2>
       <input
         class="new-task"
         type="input"
         id="myInput"
         placeholder="New Task..."
       />
-      <input
-        class="new-task"
-        type="date"
-        id="myDate"
-      />
-      <!-- <input class="new-task" type="date" id="do-by" placeholder="today" /> -->
-      <button class="submit" onclick="newItem()">Add Item</button>
-    </div id="listArea">
-    <ul class="items" id="items">
-    </ul>
+      <input class="new-task" type="date" id="myDate" />
+      <button class="submit" onclick="newItem()">Add to List</button>
+    </div>
+    <ul class="items" id="items"></ul>
     <script src="list.js"></script>
   </body>
 </html>

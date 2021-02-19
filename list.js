@@ -13,10 +13,12 @@ function newItem() {
     dueDate.defaultValue = dateValue;
     var checkbox = document.createElement("input");
     checkbox.type = "checkbox";
+    checkbox.onclick = checkOffTask;
     var closeBtn = document.createElement("button");
     var fire = document.createTextNode(" \uD83D\uDD25");
     closeBtn.className = "close";
     closeBtn.appendChild(fire);
+    closeBtn.onclick = deleteTask;
 // Creates line item with all the pieces, if not blank 
     li.append(checkbox,"   ",newItemName," ",dueBy,dueDate,"  ",closeBtn);
     if (inputValue === '') {
@@ -27,13 +29,22 @@ function newItem() {
 //reset inputs
     document.getElementById("myInput").value = "";
     document.getElementById("myDate").value = "";
-  
-    for (i = 0; i < close.length; i++) {
-      close[i].onclick = function() {
-        var div = this.parentElement;
-        div.style.display = "none";
-      }
-    }
-  }
-
+}
 // fire button functionality
+function deleteTask(){
+    var div = this.parentElement;
+    div.style.display = "none";
+}
+// task completed functionality, with un-complete option
+function checkOffTask(){
+    var div = this.parentElement;
+    div.className += "completed";
+    this.onclick = uncheckTask;
+    }
+function uncheckTask(){
+    var div = this.parentElement;
+    div.className = "";
+    this.onclick = checkOffTask;
+}
+
+

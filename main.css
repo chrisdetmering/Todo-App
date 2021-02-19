@@ -2,6 +2,13 @@ body {
   background: slategray;
   text-align: center;
 }
+.completed {
+  text-decoration: line-through;
+  color: lightslategray;
+}
+.container1 {
+  background: rgba(0, 0, 128, 0.034);
+}
 h1 {
   color: white;
   font-size: 3em;
@@ -9,14 +16,15 @@ h1 {
 }
 h2 {
   margin-top: 0;
-  color: navy;
+  color: lightgoldenrodyellow;
 }
 input {
   border: none;
 }
 ul {
-  flex: auto;
   list-style-type: none;
+  font: 1.75em bold;
+  color: mediumseagreen;
   background: lightsteelblue;
 }
 .dueDate {
@@ -27,13 +35,6 @@ ul {
 }
 .todo {
   background-color: rgb(222, 223, 223);
-  /* border: 2px solid rgb(163, 159, 159); */
-}
-.items > li {
-  border: none;
-  margin: 5px;
-  font: 1.75em bold;
-  color: mediumseagreen;
 }
 .dueBy {
   font: 0.625em bold;
@@ -42,7 +43,8 @@ ul {
 .submit {
   background-color: transparent;
   border: none;
-  font-weight: 900;
+  font-size: 1.25em;
+  font-weight: bold;
 }
 .close {
   background-color: transparent;
