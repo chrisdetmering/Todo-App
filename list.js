@@ -1,11 +1,10 @@
-//Reset App
-function clearAll(){
-    localStorage.clear();
-    window.location.reload();
-}
 // creates element of the to-do item
 function newItem() {
     var li = document.createElement("li");
+    var checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.className = "checkbox";
+    checkbox.onclick = checkOffTask;
     var inputValue = document.getElementById("myInput").value;
     var newItemName = document.createTextNode(inputValue);
     var dueBy = document.createElement("span")
@@ -16,13 +15,10 @@ function newItem() {
     dueDate.type = "date";
     dueDate.className = "dueDate";
     dueDate.defaultValue = dateValue;
-    var checkbox = document.createElement("input");
-    checkbox.type = "checkbox";
-    checkbox.onclick = checkOffTask;
     var closeBtn = document.createElement("button");
     var fire = document.createTextNode(" \uD83D\uDD25");
     closeBtn.className = "close";
-    closeBtn.appendChild(fire);
+    closeBtn.append(fire);
     closeBtn.onclick = deleteTask;
 // localstorage & Creates UI task with all the pieces, if not blank 
     li.append(checkbox,"   ",newItemName," ",dueBy,dueDate,"  ",closeBtn);
@@ -45,11 +41,17 @@ function newItem() {
 function savedTasks(){
     savedTasks = JSON.parse(localStorage.getItem("saved"));
     document.getElementById("todoList").innerHTML = savedTasks;
+    closeBtn.onclick = deleteTask;
+}
+//Reset App
+function clearAll(){
+    localStorage.clear();
+    window.location.reload();
 }
 // fire button functionality
 function deleteTask(){
     var div = this.parentElement;
-    div.style.display = "none";
+    div.remove();
 }
 // task completed functionality, with un-complete option
 function checkOffTask(){
