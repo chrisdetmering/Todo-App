@@ -1,13 +1,8 @@
-
 //Reset App
 function clearAll(){
     localStorage.clear();
     window.location.reload();
 }
-// storing
-let itemsArray = localStorage.getItem('items')
-        ? JSON.parse(localStorage.getItem('items'))
-        : []
 // creates element of the to-do item
 function newItem() {
     var li = document.createElement("li");
@@ -29,18 +24,27 @@ function newItem() {
     closeBtn.className = "close";
     closeBtn.appendChild(fire);
     closeBtn.onclick = deleteTask;
-// localstorage & Creates line item with all the pieces, if not blank 
+// localstorage & Creates UI task with all the pieces, if not blank 
     li.append(checkbox,"   ",newItemName," ",dueBy,dueDate,"  ",closeBtn);
-    if (inputValue === '') {
-      alert("Enter a task");
-    } else {
-        itemsArray.push(li.value)
-        localStorage.setItem('items', JSON.stringify(itemsArray));
+    if (inputValue === '') { alert("Enter a task");}
+    else {
+        // new item appended
         document.getElementById("todoList").appendChild(li);
-    }
+        // update and save list
+        var todoList = [];
+        current_todoList = document.getElementById("todoList");
+        listItems = current_todoList.innerHTML;
+        todoList += listItems;
+        localStorage.setItem("saved", (JSON.stringify(todoList)));
+    } 
 //reset inputs
     document.getElementById("myInput").value = "";
     document.getElementById("myDate").value = "";
+}
+//load previous tasks
+function savedTasks(){
+    savedTasks = JSON.parse(localStorage.getItem("saved"));
+    document.getElementById("todoList").innerHTML = savedTasks;
 }
 // fire button functionality
 function deleteTask(){
@@ -57,12 +61,4 @@ function uncheckTask(){
     var div = this.parentElement;
     div.className = "";
     this.onclick = checkOffTask;
-}
-//load previous tasks
-function savedTasks() {
-    for (let i = 0; i < localStorage.length; i++){
-        const key = localStorage.key(i);
-        const value = localStorage.getItem(key);    
-        document.getElementById("todoList").append(`${key} ${value}<br />`);
-    }  
 }
