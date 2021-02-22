@@ -35,6 +35,7 @@ ul {
 }
 li {
   text-align: left;
+  display: flex; 
 }
 .dueDate {
   font: 0.625em bold;
@@ -66,4 +67,9 @@ li {
   background-color: transparent;
   margin-top: 2ex;
   padding-right: 325px;
+}
+
+
+.checkbox { 
+  margin: auto 10px auto 10px; 
 }
